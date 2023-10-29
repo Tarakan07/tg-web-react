@@ -34,6 +34,7 @@ const ProductList = () => {
 	const { tg, queryId } = useTelegram();
 
 	const onSendData = useCallback(() => {
+		//send for inline_keyboard/ setmenubutton
 		const data = {
 			products: addedItems,
 			totalPrice: getTotalPrice(addedItems),
@@ -45,7 +46,7 @@ const ProductList = () => {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(data),
-		});
+		}); //sent on server and with listener take queryId for answerWebAppQuery
 	}, [addedItems]);
 
 	useEffect(() => {
@@ -56,6 +57,7 @@ const ProductList = () => {
 	}, [onSendData]);
 
 	const onAdd = (product) => {
+		//add or remove product
 		const alreadyAdded = addedItems.find((item) => item.id === product.id);
 		let newItems = [];
 
@@ -74,7 +76,7 @@ const ProductList = () => {
 			tg.MainButton.setParams({
 				text: `Купить ${getTotalPrice(newItems)}`,
 			});
-		}
+		} //setting tg button
 	};
 	const onAdded = (product) => {
 		return addedItems.findIndex((item) => item.id === product.id);

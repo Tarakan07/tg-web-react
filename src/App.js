@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router-dom";
 const App = () => {
 	const { tg } = useTelegram();
 	useEffect(() => {
-		tg.ready();
+		tg.ready(); // tg ready
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 

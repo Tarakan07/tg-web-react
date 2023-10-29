@@ -9,12 +9,13 @@ const Form = () => {
 	const { tg } = useTelegram();
 
 	const onSendData = useCallback(() => {
+		//send for keyboard
 		const data = {
 			country,
 			street,
 			subject,
 		};
-		tg.sendData(JSON.stringify(data));
+		tg.sendData(JSON.stringify(data)); //send data on json
 	}, [country, street, subject]);
 
 	useEffect(() => {
@@ -22,12 +23,12 @@ const Form = () => {
 		return () => {
 			tg.offEvent("mainButtonClicked", onSendData);
 		};
-	}, [onSendData]);
+	}, [onSendData]); //hang event on tg button,if changes link onSentData - refresh link
 
 	useEffect(() => {
 		tg.MainButton.setParams({
 			text: "Отправить данные",
-		});
+		}); //change tg button
 	}, []);
 
 	useEffect(() => {
