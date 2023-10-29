@@ -40,14 +40,15 @@ const ProductList = () => {
 			totalPrice: getTotalPrice(addedItems),
 			queryId,
 		};
-		return;
-		fetch("http://localhost:8000/data", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		}); //sent on server and with listener take queryId for answerWebAppQuery
+
+		// fetch("http://localhost:8000/data", {
+		// 	method: "POST",
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// 	body: JSON.stringify(data),
+		// });
+		//sent on server and with listener take queryId for answerWebAppQuery
 	}, [addedItems]);
 
 	useEffect(() => {
