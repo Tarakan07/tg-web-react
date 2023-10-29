@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../button/button";
 import "./product-item.css";
 const ProductItem = ({ product, onAdded, className, onAdd }) => {
-	console.log(onAdded);
 	const onAddHandler = () => {
 		onAdd(product);
 	};
@@ -18,7 +17,7 @@ const ProductItem = ({ product, onAdded, className, onAdd }) => {
 				</span>
 			</div>
 			<Button className={"add-btn"} onClick={onAddHandler}>
-				{onAdded > -1 ? "Удалить" : "Добавить в корзину"}
+				{onAdded(product) > -1 ? "Удалить" : "Добавить в корзину"}
 			</Button>
 		</div>
 	);
