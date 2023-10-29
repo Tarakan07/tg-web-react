@@ -6,7 +6,7 @@ import ProductList from "./components/product-list/ProductList";
 import Form from "./components/form/Form";
 import { Route, Routes } from "react-router-dom";
 const App = () => {
-	const { tg, onToggleButton } = useTelegram();
+	const { tg } = useTelegram();
 	useEffect(() => {
 		tg.ready();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
