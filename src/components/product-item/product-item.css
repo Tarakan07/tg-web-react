@@ -7,15 +7,16 @@
 }
 
 .img {
-	width: 100%;
+	border-radius: 50%;
+	width: 140px;
 	background: lightgray;
-	height: 100px;
+	height: 140px;
 	margin: 0 auto;
 	background: var(--tg-theme-button-color);
 }
 
 .description {
-	font-size: 0.8em;
+	font-size: 12px;
 }
 
 .add-btn {

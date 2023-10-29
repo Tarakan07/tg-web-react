@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useCallback } from "react";
 import { useTelegram } from "../../hooks/useTelegram";
+import "./form.css";
 const Form = () => {
 	const [country, setCountry] = useState("");
 	const [street, setStreet] = useState("");

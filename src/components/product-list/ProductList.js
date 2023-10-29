@@ -76,11 +76,18 @@ const ProductList = () => {
 			});
 		}
 	};
-
+	const onAdded = (product) => {
+		return addedItems.findIndex((item) => item.id === product.id);
+	};
 	return (
 		<div className={"list"}>
 			{products.map((item) => (
-				<ProductItem product={item} onAdd={onAdd} className={"item"} />
+				<ProductItem
+					product={item}
+					onAdded={onAdded}
+					onAdd={onAdd}
+					className={"item"}
+				/>
 			))}
 		</div>
 	);
